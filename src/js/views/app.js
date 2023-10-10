@@ -1,14 +1,19 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css'; // Importa tus estilos CSS aquí
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { Home } from "./components/Home";
+import { CharacterDetails } from "./components/CharacterDetails";
+import { PlanetDetails } from "./components/PlanetDetails";
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+const App = () => {
+  return (
+    <Router>
+      <Switch>
+        <Route exact path="/" component={Home} />
+        <Route path="/characters/:uid" component={CharacterDetails} />
+        <Route path="/planets/:uid" component={PlanetDetails} />
+      </Switch>
+    </Router>
+  );
+};
 
-reportWebVitals();
+export default App;
