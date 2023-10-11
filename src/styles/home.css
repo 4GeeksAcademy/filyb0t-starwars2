@@ -1,0 +1,11 @@
+
+@import 'slick-carousel/slick/slick.css';
+@import 'slick-carousel/slick/slick-theme.css';
+
+.carousel {
+    display: flex;
+    overflow-x: auto;
+    gap: 10px; /* Espacio entre las tarjetas */
+    width: 100%; /* Ajusta el ancho del carrusel según sea necesario */
+  }
+  
