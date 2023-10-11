@@ -5,7 +5,7 @@
 .carousel {
     display: flex;
     overflow-x: auto;
-    gap: 10px; /* Espacio entre las tarjetas */
-    width: 100%; /* Ajusta el ancho del carrusel según sea necesario */
+    gap: 10px; 
+    width: 100%; 
   }
   
