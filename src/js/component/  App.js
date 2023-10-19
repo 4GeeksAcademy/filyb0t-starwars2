@@ -11,7 +11,7 @@ function App() {
           <Route path="/" exact component={Home} />
           <Route path="/characters/:id" component={CharacterDetails} />
           <Route path="/planets/:id" component={PlanetDetails} />
-          {/* Otras rutas aquí */}
+          {}
         </Switch>
       </div>
     </Router>

@@ -6,7 +6,7 @@ const PlanetDetails = () => {
   const { store } = useContext(Context);
   const { planetId } = useParams();
 
-  // Buscar el planeta por su ID en el contexto de la aplicación
+
   const planet = store.planets.find((planet) => planet._id === planetId);
 
   if (!planet) {

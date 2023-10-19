@@ -25,7 +25,7 @@ const getState = ({ getStore, getActions, setStore }) => {
           .catch((error) => console.log(error));
       },
       getPlanets: async () => {
-        // con async await
+     
         let store = getStore();
         let response = await fetch(`${store.urlBase}/planets`);
         let data = await response.json();

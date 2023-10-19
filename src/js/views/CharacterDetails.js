@@ -6,7 +6,7 @@ const CharacterDetails = () => {
   const { store } = useContext(Context);
   const { characterId } = useParams();
 
-  // Buscar el personaje por su ID en el contexto de la aplicación
+  
   const character = store.characters.find((character) => character._id === characterId);
 
   if (!character) {
