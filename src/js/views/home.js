@@ -1,10 +1,18 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Context } from "../store/appContext";
 import "../../styles/home.css";
 import { Link } from "react-router-dom";
 
 export const Home = () => {
   const { store, actions } = useContext(Context);
+  const [updateView, setUpdateView] = useState(false);
+ useEffect(() => {
+    
+  }, [updateView]);
+ const addToFavorites = (item) => {
+    actions.addFavorite(item);
+  setUpdateView(!updateView);
+  };
 
   return (
     <div className="container mt-5">
@@ -35,7 +43,7 @@ export const Home = () => {
                 <Link to={`/characters/${item._id}`} className="btn btn-outline-primary">
                   Learn more!
                 </Link>
-                <button onClick={() => actions.addFavorite(item)} className="btn btn-outline-warning">
+                <button onClick={() => addToFavorites(item)} className="btn btn-outline-warning">
                   Add to Favorites
                 </button>
               </div>
@@ -68,7 +76,7 @@ export const Home = () => {
                 <Link to={`/planets/${item._id}`} className="btn btn-outline-primary">
                   Learn more!
                 </Link>
-                <button onClick={() => actions.addFavorite(item)} className="btn btn-outline-warning">
+                <button onClick={() => addToFavorites(item)} className="btn btn-outline-warning">
                   Add to Favorites
                 </button>
               </div>
@@ -76,8 +84,6 @@ export const Home = () => {
           ))}
         </div>
       </div>
-
-      
     </div>
   );
 };

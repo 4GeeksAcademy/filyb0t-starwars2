@@ -1,19 +1,25 @@
+// App.js
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import { Home } from "./components/Home";
-import { CharacterDetails } from "./components/CharacterDetails";
-import { PlanetDetails } from "./components/PlanetDetails";
+import CharacterDetails from "./components/CharacterDetails";
+import PlanetDetails from "./components/PlanetDetails";
+import Home from "./components/Home";
+import Navbar from "./components/Navbar";
 
-const App = () => {
+function App() {
   return (
     <Router>
-      <Switch>
-        <Route exact path="/" component={Home} />
-        <Route path="/characters/:uid" component={CharacterDetails} />
-        <Route path="/planets/:uid" component={PlanetDetails} />
-      </Switch>
+      <div>
+        <Navbar />
+        <Switch>
+          <Route path="/" exact component={Home} />
+          <Route path="/characters/:id" component={CharacterDetails} />
+          <Route path="/planets/:id" component={PlanetDetails} />
+          {/* Otras rutas aquí */}
+        </Switch>
+      </div>
     </Router>
   );
-};
+}
 
 export default App;
